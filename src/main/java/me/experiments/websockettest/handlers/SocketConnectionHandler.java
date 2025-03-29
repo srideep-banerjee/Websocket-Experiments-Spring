@@ -1,6 +1,5 @@
 package me.experiments.websockettest.handlers;
 
-import me.experiments.websockettest.rate.limit.RateLimitingInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketMessage;
@@ -12,13 +11,13 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
+import static me.experiments.websockettest.config.Constants.MESSAGE_QUEUE_LENGTH;
+
 @Component
 public class SocketConnectionHandler extends TextWebSocketHandler {
 
-    static int MESSAGE_QUEUE_LENGTH = 10;
-
-    final Queue<WebSocketMessage<?>> messages = new LinkedList<>();
-    final Map<String, WebSocketSession> sessions = new HashMap<>();
+    private final Queue<WebSocketMessage<?>> messages = new LinkedList<>();
+    private final Map<String, WebSocketSession> sessions = new HashMap<>();
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
