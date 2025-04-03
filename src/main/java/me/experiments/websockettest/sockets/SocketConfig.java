@@ -1,7 +1,5 @@
-package me.experiments.websockettest.config;
+package me.experiments.websockettest.sockets;
 
-import me.experiments.websockettest.handlers.SocketConnectionHandler;
-import me.experiments.websockettest.rate.limit.RateLimitingInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;

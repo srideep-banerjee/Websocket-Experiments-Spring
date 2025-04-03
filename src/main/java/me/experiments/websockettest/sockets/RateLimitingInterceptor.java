@@ -1,4 +1,4 @@
-package me.experiments.websockettest.rate.limit;
+package me.experiments.websockettest.sockets;
 
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import static me.experiments.websockettest.config.Constants.MAX_SESSION_COUNT;
-import static me.experiments.websockettest.config.Constants.MAX_MSG_PER_HOUR;
+import static me.experiments.websockettest.Constants.MAX_SESSION_COUNT;
+import static me.experiments.websockettest.Constants.MAX_MSG_PER_HOUR;
 
 @Component
 public class RateLimitingInterceptor implements HandshakeInterceptor {

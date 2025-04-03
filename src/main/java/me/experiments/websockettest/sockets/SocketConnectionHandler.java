@@ -1,6 +1,5 @@
-package me.experiments.websockettest.handlers;
+package me.experiments.websockettest.sockets;
 
-import me.experiments.websockettest.rate.limit.RateLimitingInterceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -16,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static me.experiments.websockettest.config.Constants.MESSAGE_QUEUE_LENGTH;
+import static me.experiments.websockettest.Constants.MESSAGE_QUEUE_LENGTH;
 
 @Component
 public class SocketConnectionHandler extends TextWebSocketHandler {
