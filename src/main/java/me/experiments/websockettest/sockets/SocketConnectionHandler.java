@@ -50,7 +50,7 @@ public class SocketConnectionHandler extends TextWebSocketHandler {
         sessions.remove(session.getId());
         session.close();
 
-        rateLimitingInterceptor.afterConnectionClosed();
+        rateLimitingInterceptor.afterConnectionClosed(session);
 
         System.out.println(session.getId() + " Disconnected");
     }
